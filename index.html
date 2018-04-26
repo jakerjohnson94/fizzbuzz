@@ -18,19 +18,28 @@
             for (let i = 1; i <= 1000; i++) {
                 const span = document.createElement("span");
                 span.textContent = i + ', ';
+<<<<<<< HEAD
                 if(i===2){
                     span.className = 'prime even';
                     document.getElementById('content').appendChild(span);
                 }
                 else if (isPrime(i) === true && i > 1) {
                     span.className = 'prime ';
+=======
+                if (isPrime(i) === true && i > 1) {
+                    span.className = 'prime';
+>>>>>>> ca7a9431f30b72b473b65238092ceb350b728f40
                     document.getElementById('content').appendChild(span);
                 }
                 else if (i % 3 === 0 && i % 2 === 0) {
                     span.className = 'divBy3 even';
                     document.getElementById('content').appendChild(span);
                 }
+<<<<<<< HEAD
                 else if (i % 2 === 0 || i==2) {
+=======
+                else if (i % 2 === 0 || i === 2) {
+>>>>>>> ca7a9431f30b72b473b65238092ceb350b728f40
                     span.className = 'even';
                     document.getElementById('content').appendChild(span);
                 }
