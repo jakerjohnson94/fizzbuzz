@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,33 +9,43 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
+
 <body>
     <div id="content">
-   
-    <script>
 
-        for(let i= 1; i<= 1000; i++){
-            if (isPrime(i) === true && i>1){
-                document.getElementById('content').innerHTML += "<span class= 'prime'>" + [i] + ", </span>";
-          
-            
-        }
-        else  if(i%2===0 || i===2){
-                document.getElementById('content').innerHTML += "<span class='even'>"+ [i] + ", </span>";
+        <script>
+
+            for (let i = 1; i <= 1000; i++) {
+                const span = document.createElement("span");
+                span.textContent = i + ', ';
+                if (isPrime(i) === true && i > 1) {
+                    span.className = 'prime';
+                    document.getElementById('content').appendChild(span);
+                }
+                else if (i % 3 === 0 && i % 2 === 0) {
+                    span.className = 'divBy3 even';
+                    document.getElementById('content').appendChild(span);
+                }
+                else if (i % 2 === 0 || i === 2) {
+                    span.className = 'even';
+                    document.getElementById('content').appendChild(span);
+                }
+
+                else if (i % 3 === 0) {
+                    span.className = 'divBy3';
+                    document.getElementById('content').appendChild(span);
+                }
+
+
+                else {
+                    document.getElementById('content').appendChild(span);
+
+                }
             }
-       
-            else if (i%2 !== 0){
-                document.getElementById('content').innerHTML += "<span class='divBy3'>"+ [i] + ", </span>";
-            }
-         
-            else{
-                document.getElementById('content').innerHTML += "<span>"+ [i] + ", </span>";
-                
-            }
-        }
 
         </script>
-        </div>
+    </div>
 
 </body>
+
 </html>
